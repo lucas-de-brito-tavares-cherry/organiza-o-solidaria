@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cadastro — Organização Solidária</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <img src="images/logo.svg" alt="Logo Organização Solidária" class="logo">
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos Sociais</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="form-section" aria-labelledby="form-title">
+      <h1 id="form-title">Cadastro de Voluntário / Doador</h1>
+      <p>Preencha o formulário abaixo. Campos com <span aria-hidden="true">*</span> são obrigatórios.</p>
+
+      <form id="cadastroForm" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Dados Pessoais</legend>
+
+          <label for="nome">Nome completo <span>*</span></label>
+          <input type="text" id="nome" name="nome" required minlength="3" placeholder="Nome completo">
+
+          <label for="email">E‑mail <span>*</span></label>
+          <input type="email" id="email" name="email" required placeholder="seu@exemplo.com" autocomplete="email">
+
+          <label for="cpf">CPF <span>*</span></label>
+          <input type="text" id="cpf" name="cpf" required inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" placeholder="000.000.000-00" aria-describedby="cpfHelp">
+
+          <label for="telefone">Telefone <span>*</span></label>
+          <input type="tel" id="telefone" name="telefone" required inputmode="tel" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" placeholder="(00) 90000-0000">
+
+          <label for="nascimento">Data de nascimento</label>
+          <input type="date" id="nascimento" name="nascimento" max="2007-12-31">
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Endereço</legend>
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Rua, número, complemento">
+          <label for="cep">CEP <span>*</span></label>
+          <input type="text" id="cep" name="cep" required inputmode="numeric" pattern="\d{5}-\d{3}" maxlength="9" placeholder="00000-000">
+          <div class="row">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado">
+              <option value="">Selecione</option>
+              <option value="SP">SP</option>
+              <option value="RJ">RJ</option>
+              <option value="MG">MG</option>
+              <option value="BA">BA</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferências</legend>
+          <label><input type="checkbox" name="voluntario" value="sim"> Tenho interesse em ser voluntário</label>
+          <label><input type="checkbox" name="doar" value="sim"> Quero receber informações sobre doações</label>
+        </fieldset>
+
+        <button type="submit">Enviar cadastro</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Organização Solidária</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
